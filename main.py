@@ -1,34 +1,12 @@
-import requests
-import json
-import os
-import psycopg2
 
-dir_path = os.path.dirname(os.path.realpath(__file__))
-api = 'https://opentdb.com/api.php?amount=10'
+# List of questions and money ladder 
+questions_money_ladder = [(1, 100),(2, 200),(3, 300),(4, 500),(5, 1000),
+                          (6, 2000),(7, 4000),(8, 8000), (9, 16000), (10, 32000),
+                          (11, 64000), (12, 125000), (13, 250000), (14, 500000), (15, 1000000)]
 
 
-def get_questions_info():
-    '''
-    Requests questions from API Trivia 
-    and stores them in a json file 
-    '''
-    response = requests.get(api)
-
-    if response.status_code == 200:
-        questions_data = json.loads(response.text)
-        with open(f'{dir_path}/questions.json', 'w', encoding='utf-8') as f:
-            json.dump(questions_data, f, indent=4, sort_keys=True)
-    else:
-        print('Failed to retrieve data')
-
-
-# add try-except handling 
-
-get_questions_info()
-
-# after each game: 
-#   - drop table if exists
-
-
+# welcome message 
+# ask for input - enter (in main loop)
+# check input (in main loop)
 
 
