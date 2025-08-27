@@ -1,0 +1,1 @@
+g.display_lifelines()

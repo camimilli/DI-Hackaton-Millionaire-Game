@@ -1,81 +1,102 @@
 import config, json, requests, os, random, time, html
 
-
 class Game:
     """This class simulates a game of Who Wants to be a Millionaire!?"""
+    LETTERS = ['A', 'B', 'C', 'D']
+
     def __init__(self):
-        self.current_question = 3
+        self.current_round = 2
         self.lifelines = ['50/50', 'Ask The Audience', 'Call A Friend']
         self.money_ladder = [
-        (500, "easy"), (1000, "easy"), (2000, "easy"), (3000, "easy"), (5000, "easy"),
-        (7500, "medium"), (10000, "medium"), (12500, "medium"), (15000, "medium"), (25000, "medium"),
-        (50000, "medium"), (100000, "hard"), (250000, "hard"), (500000, "hard"), (1000000, "hard")]
+            500, 1000, 2000, 3000, 5000,
+            7500, 10000, 12500, 15000, 25000,
+            50000, 100000, 250000, 500000, 1000000
+        ]
 
+        questions_file = f"{config.dir_path}/questions.json"
 
+        # Only fetch from API if JSON file does not exist, otherwise initialize questions AS get_questions_info method
+        if not os.path.exists(questions_file):
+            self.get_questions_info() 
+
+        # If API exists, initialize questions as an attribute type dict
+        with open(questions_file, 'r', encoding='utf-8') as f:
+            self.questions = json.load(f)
+    
     def get_questions_info(self):
-        """
-        Fetch exactly 5 questions per difficulty from Open Trivia DB
-        Load them into a JSON file by order of difficulty.
-        """
-        difficulties = ["easy", "medium", "hard"]
-        desired_count = 5
-        all_questions = {"easy": [], "medium": [], "hard": []}
+            """
+            Fetch exactly 5 questions per difficulty from Open Trivia DB
+            Load them into a JSON file by order of difficulty.
+            """
+            difficulties = ["easy", "medium", "hard"]
+            desired_count = 5
+            all_questions = {"easy": [], "medium": [], "hard": []}
 
-        for diff in difficulties:
-            attempts = 0
-            while len(all_questions[diff]) < desired_count and attempts < 5:
-                response = requests.get(
-                    config.api,
-                    params={"amount": 5, "type": "multiple", "difficulty": diff}
-                )
+            for diff in difficulties:
+                attempts = 0
+                
+                # Will move to next difficulty once length of list is 5 or more 5 attempts are made
+                while len(all_questions[diff]) < desired_count and attempts < 5:
+                    response = requests.get(
+                        config.api,
+                        params={"amount": 15, "type": "multiple", "difficulty": diff}  # Parameters are added to the base
+                    )                                                                  # API using the defined variables
+                    
+                    # Ensures that the method will continue working until 5 unique questions are extracted from API
+                    # 429 Response Code = Too Many Requests
+                    if response.status_code == 429:
+                        print(f"Rate limit hit for {diff}. Waiting 2 seconds before retry...") 
+                        time.sleep(2)
+                        attempts += 1
+                        continue
+                    
+                    # If no successful connection is made to the API, the program will end
+                    if response.status_code != 200:
+                        print(f"Failed to fetch {diff} questions. Status:", response.status_code)
+                        break
 
-                if response.status_code == 429:
-                    print(f"Rate limit hit for {diff}. Waiting 2 seconds before retry...")
-                    time.sleep(2)
+                    batch = response.json().get("results", [])
+                    # Remove duplicates
+                    existing_texts = {q["question"] for q in all_questions[diff]}
+                    new_questions = [q for q in batch if q["question"] not in existing_texts]
+
+
+                    remaining_slots = desired_count - len(all_questions[diff])
+                    all_questions[diff].extend(new_questions[:remaining_slots])
+
+                    # Small delay to avoid rate limit
+                    time.sleep(1)
                     attempts += 1
-                    continue
 
-                if response.status_code != 200:
-                    print(f"Failed to fetch {diff} questions. Status:", response.status_code)
-                    break
+                if len(all_questions[diff]) < desired_count:
+                    print(f"Warning: Only fetched {len(all_questions[diff])} {diff} questions from API.")
 
-                batch = response.json().get("results", [])
-                # Remove duplicates
-                existing_questions = {q["question"] for q in all_questions[diff]}
-                new_questions = [q for q in batch if q["question"] not in existing_questions]
+            # Flatten questions in order: easy → medium → hard
+            ordered_questions = all_questions["easy"] + all_questions["medium"] + all_questions["hard"]
 
-                remaining_slots = desired_count - len(all_questions[diff])
-                all_questions[diff].extend(new_questions[:remaining_slots])
-
-                # Small delay to avoid rate limit
-                time.sleep(1)
-                attempts += 1
-
-        # Flatten questions in order: easy → medium → hard
-        ordered_questions = all_questions["easy"] + all_questions["medium"] + all_questions["hard"]
-
-        with open(f"{config.dir_path}/questions.json", "w", encoding="utf-8") as f:
-            json.dump(ordered_questions, f, indent=4, ensure_ascii=False)
-
+            with open(f"{config.dir_path}/questions.json", "w", encoding="utf-8") as f:
+                json.dump(ordered_questions, f, indent=4, ensure_ascii=False)
 
     def fetch_question(self):
-        """
-        Returns the next question based on current_question index,
-        with HTML entities decoded for readability.
-        """
-        money = self.money_ladder[self.current_question][0]
+        """Takes the dictionary of the question 
+        at the current index and returns 4 variables
+        the question text, the money value, the correct answer
+        and the 4 anser options"""
 
-        with open(f'{config.dir_path}/questions.json', 'r', encoding='utf-8') as f:
-            questions = json.load(f)
+        # money value is assigned to each questions depending on the current round
+        money = self.money_ladder[self.current_round]
 
-        question_info = questions[self.current_question]
+        # retrieves the dictionary of the current question
+        question_dict = self.questions[self.current_round]
 
-        # Remove random characters from questions/answers
-        question = html.unescape(question_info['question'])
-        correct_answer = html.unescape(question_info['correct_answer'])
-        options = [html.unescape(opt) for opt in question_info['incorrect_answers']] + [correct_answer]
+        # set the value of the desired variables using the dict values
+        question = html.unescape(question_dict['question'])
+        correct_answer = html.unescape(question_dict['correct_answer'])
 
-        # Shuffle the options so correct answer doesn't appear in the same place
+        # incorrect answers + correct answers need to be combined into a single list
+        options = [html.unescape(opt) for opt in question_dict['incorrect_answers']] + [correct_answer]
+
+        # Shuffle so that correct_answer always is in a random place
         random.shuffle(options)
 
         return question, correct_answer, options, money
@@ -157,8 +178,8 @@ class Game:
     
 
 
-# g = Game()
-# # g.get_questions_info()
+g = Game()
+print(g.fetch_question())
 # g.display_question(g.fetch_question()[0], g.fetch_question()[2], g.fetch_question()[3])
-# # g.display_lifelines()
+# g.display_lifelines()
 # print(g.get_user_answer())

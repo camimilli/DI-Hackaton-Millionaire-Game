@@ -2,181 +2,181 @@
     {
         "type": "multiple",
         "difficulty": "easy",
-        "category": "Entertainment: Music",
-        "question": "Kanye West at 2009 VMA&#039;s interrupted which celebrity?",
-        "correct_answer": "Taylor Swift",
+        "category": "Entertainment: Video Games",
+        "question": "What&#039;s the name of the main protagonist in the &quot;Legend of Zelda&quot; franchise?",
+        "correct_answer": "Link",
         "incorrect_answers": [
-            "MF DOOM",
-            "Beyonce",
-            "Beck"
+            "Mario",
+            "Zelda",
+            "Pit"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "easy",
-        "category": "Animals",
-        "question": "Which class of animals are newts members of?",
-        "correct_answer": "Amphibian",
+        "category": "Entertainment: Video Games",
+        "question": "In the first game of the Sly Cooper franchise, what family heirloom did Sly Cooper want to steal back?",
+        "correct_answer": "Thievius Raccoonus",
         "incorrect_answers": [
-            "Fish",
-            "Reptiles",
-            "Mammals"
+            "Raccoon Training 101",
+            "The Art of Sneak",
+            "Raccoonus Teachus"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "easy",
-        "category": "Vehicles",
-        "question": "The LS1 engine is how many cubic inches?",
-        "correct_answer": "346",
+        "category": "Entertainment: Video Games",
+        "question": "What is the boss round featured in the &quot;Call Of Duty: Zombies&quot; map &quot;Five&quot;?",
+        "correct_answer": "The Pentagon Thief",
         "incorrect_answers": [
-            "350",
-            "355",
-            "360"
+            "Hellhounds",
+            "Jumping Jacks",
+            "Napalm Zombie"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "easy",
         "category": "General Knowledge",
-        "question": "The New York Times slogan is, &ldquo;All the News That&rsquo;s Fit to&hellip;&rdquo;",
-        "correct_answer": "Print",
+        "question": "What zodiac sign is represented by a pair of scales?",
+        "correct_answer": "Libra",
         "incorrect_answers": [
-            "Digest",
-            "Look",
-            "Read"
+            "Aries",
+            "Capricorn",
+            "Sagittarius"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "easy",
-        "category": "Entertainment: Video Games",
-        "question": "Who is the main antagonist in the Portal franchise?",
-        "correct_answer": "GLaDOS",
+        "category": "Science &amp; Nature",
+        "question": "Who is the chemical element Curium named after?",
+        "correct_answer": "Marie &amp; Pierre Curie",
         "incorrect_answers": [
-            "Chell",
-            "Wheatley",
-            "Rick"
+            "The Curiosity Rover",
+            "Curious George",
+            "Stephen Curry"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "medium",
-        "category": "Entertainment: Film",
-        "question": "How much money did the 2019 Marvel movie &quot;Avengers: Endgame&quot; gross for it&#039;s record-breaking worldwide opening weekend?",
-        "correct_answer": "1.2 billion USD",
+        "category": "Entertainment: Books",
+        "question": "What was the pen name of novelist, Mary Ann Evans?",
+        "correct_answer": "George Eliot",
         "incorrect_answers": [
-            "640 million USD",
-            "456 million USD",
-            "392 million USD"
+            "George Orwell",
+            "George Bernard Shaw",
+            "George Saunders"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "medium",
-        "category": "Entertainment: Film",
-        "question": "Which movie sequel had improved box office results compared to its original film?",
-        "correct_answer": "Toy Story 2",
+        "category": "Science &amp; Nature",
+        "question": "Which chemical element was originally known as Alabamine?",
+        "correct_answer": "Astatine",
         "incorrect_answers": [
-            "Sin City: A Dame to Kill For",
-            "Speed 2: Cruise Control",
-            "Son of the Mask"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Geography",
-        "question": "What is the capital of British Columbia, Canada?",
-        "correct_answer": "Victoria",
-        "incorrect_answers": [
-            "Vancouver",
-            "Hope",
-            "Kelowna"
+            "Selenium",
+            "Antimony",
+            "Molybdenum"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "medium",
         "category": "Entertainment: Video Games",
-        "question": "Which musical artist was NOT featured as playable avatars in the game &quot;DJ Hero&quot;?",
-        "correct_answer": "Dr. Dre",
+        "question": "In which game does a character say, &quot;Sometimes, I dream about cheese&quot;?",
+        "correct_answer": "Half Life 2",
         "incorrect_answers": [
-            "DJ Shadow",
-            "Daft Punk",
-            "Grandmaster Flash"
+            "Team Fortress 2",
+            "Dark Souls",
+            "Serious Sam: The Second Encounter"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "medium",
         "category": "Entertainment: Music",
-        "question": "What album did Gorillaz release in 2017?",
-        "correct_answer": "Humanz",
+        "question": "According to the RIAA: Which artist has sold the most albums by the million?",
+        "correct_answer": "The Beatles",
         "incorrect_answers": [
-            "Plastic Beach",
-            "The Fall",
-            "Demon Days"
+            "Elvis Presley",
+            "Michael Jackson",
+            "Pink Floyd"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Science &amp; Nature",
+        "question": "Au on the Periodic Table refers to which element?",
+        "correct_answer": "Gold",
+        "incorrect_answers": [
+            "Silver",
+            "Oxygen",
+            "Nickel"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "hard",
-        "category": "Vehicles",
-        "question": "Which one of the following is NOT a sub-company of the Volkswagen Group?",
-        "correct_answer": "Opel",
+        "category": "Entertainment: Video Games",
+        "question": "What was the nickname of the original model for Half-Life&#039;s protagonist Gordon Freeman?",
+        "correct_answer": "Ivan the Space Biker",
         "incorrect_answers": [
-            "Porsche",
-            "Bugatti",
-            "Bentley"
+            "Gordon the Space Biker",
+            "Ivan the Alien Biker",
+            "Gordon the Alien Biker"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Science: Computers",
+        "question": "Which of the following physical typologies are used with Ethernet Networks?",
+        "correct_answer": "Star",
+        "incorrect_answers": [
+            "Ring",
+            "Mesh",
+            "Hex"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "hard",
         "category": "Science &amp; Nature",
-        "question": "Which of these is a semiconductor amplifying device?",
-        "correct_answer": "transistor",
+        "question": "What does the term &quot;isolation&quot; refer to in microbiology?",
+        "correct_answer": "The separation of a strain from a natural, mixed population of living microbes",
         "incorrect_answers": [
-            "tube",
-            "diode",
-            "P-N junction"
+            "A lack of nutrition in microenviroments",
+            "The nitrogen level in soil",
+            "Testing effects of certain microorganisms in an isolated enviroments, such as caves"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "hard",
-        "category": "General Knowledge",
-        "question": "Located in Chile, El Teniente is the world&#039;s largest underground mine for what metal?",
-        "correct_answer": "Copper",
+        "category": "Science: Mathematics",
+        "question": "Which of the following mathematicians made major contributions to game theory?",
+        "correct_answer": "John Von Neumann",
         "incorrect_answers": [
-            "Iron",
-            "Nickel",
-            "Silver"
+            "Carl Friedrich Gauss",
+            "Leonhard Euler",
+            "Stefan Banach"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "hard",
-        "category": "Entertainment: Music",
-        "question": "What is the British term for a 64th note?",
-        "correct_answer": "Hemidemisemiquaver",
+        "category": "Geography",
+        "question": "How many stations does the Central Line have on the London Underground?",
+        "correct_answer": "49",
         "incorrect_answers": [
-            "Semihemidemisemiquaver",
-            "Semiquaver",
-            "Demisemiquaver"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "History",
-        "question": "In the Seven Wonders of the World, which wonder is the only that has survived to this day?",
-        "correct_answer": "Great Pyramid of Giza",
-        "incorrect_answers": [
-            "Colossus of Rhodes",
-            "Lighthouse of Alexandria",
-            "Statue of Zeus at Olympia"
+            "51",
+            "43",
+            "47"
         ]
     }
 ]
