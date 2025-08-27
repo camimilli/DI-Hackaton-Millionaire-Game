@@ -8,10 +8,11 @@ def get_connection():
     connection  = psycopg2.connect(os.getenv("DATABASE_URL"))
     return connection
 
-def init_db():
+connection = get_connection()
+cursor = connection.cursor()
+
+def init_db(cursor):
     '''Initializes a new progress table for a game of "Who Wants to be a Millionare?!'''
-    connection = get_connection()
-    cursor = connection.cursor()
 
     query = """CREATE TABLE game_progress(
     question_num SERIAL PRIMARY KEY,
@@ -24,24 +25,16 @@ def init_db():
 
     cursor.execute('DROP TABLE IF EXISTS game_progress')
     cursor.execute(query)
-    
     connection.commit()
-    cursor.close()
-    connection.close()
     print("Table Initialized.")
 
-def log_answer(question, user_answer, correct_answer, money):
+def log_answer(cursor, question, user_answer, correct_answer, money):
     """Logs the question, answer and user response to the progress table"""
-    connection = get_connection()
-    cursor = connection.cursor()
+    query = """INSERT INTO game_progress(question, user_answer, correct_answer, money) VALUES 
+    (%s, %s, %s, %s)"""
 
-    query = f"""INSERT INTO game_progress(question, user_answer, correct_answer, money) VALUES
-    ('{question}', '{user_answer}', '{correct_answer}', '{money}')"""
-
-    cursor.execute(query)
+    cursor.execute(query, (question, user_answer, correct_answer, money))
     connection.commit()
-    cursor.close()
-    connection.close()
 
-
-log_answer("What is your name?", "Niv", "Jesus", 100)
+def fetch_progress(cursor):
+    pass
