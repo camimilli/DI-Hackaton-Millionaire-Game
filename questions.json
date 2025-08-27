@@ -2,181 +2,181 @@
     {
         "type": "multiple",
         "difficulty": "easy",
-        "category": "Entertainment: Video Games",
-        "question": "The games Cry of Fear, Natural Selection and Counter-Strike were originally mods for what video game?",
-        "correct_answer": "Half-Life",
-        "incorrect_answers": [
-            "Warcraft III",
-            "Arma 2",
-            "Doom"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
         "category": "Entertainment: Music",
-        "question": "Whose signature guitar technique is called the &quot;windmill&quot;?",
-        "correct_answer": "Pete Townshend",
+        "question": "Kanye West at 2009 VMA&#039;s interrupted which celebrity?",
+        "correct_answer": "Taylor Swift",
         "incorrect_answers": [
-            "Jimmy Page",
-            "Eddie Van Halen",
-            "Jimi Hendrix"
+            "MF DOOM",
+            "Beyonce",
+            "Beck"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "easy",
-        "category": "Science: Computers",
-        "question": "In any programming language, what is the most common way to iterate through an array?",
-        "correct_answer": "&#039;For&#039; loops",
+        "category": "Animals",
+        "question": "Which class of animals are newts members of?",
+        "correct_answer": "Amphibian",
         "incorrect_answers": [
-            "&#039;If&#039; Statements",
-            "&#039;Do-while&#039; loops",
-            "&#039;While&#039; loops"
+            "Fish",
+            "Reptiles",
+            "Mammals"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "easy",
-        "category": "Entertainment: Television",
-        "question": "In the show Stranger Things, what is Eleven&#039;s favorite breakfast food?",
-        "correct_answer": "Eggo Waffles",
+        "category": "Vehicles",
+        "question": "The LS1 engine is how many cubic inches?",
+        "correct_answer": "346",
         "incorrect_answers": [
-            "Toast",
-            "Captain Crunch",
-            "Bacon and Eggs"
+            "350",
+            "355",
+            "360"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "easy",
         "category": "General Knowledge",
-        "question": "Which of the following card games revolves around numbers and basic math?",
-        "correct_answer": "Uno",
+        "question": "The New York Times slogan is, &ldquo;All the News That&rsquo;s Fit to&hellip;&rdquo;",
+        "correct_answer": "Print",
         "incorrect_answers": [
-            "Go Fish",
-            "Twister",
-            "Munchkin"
+            "Digest",
+            "Look",
+            "Read"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Entertainment: Video Games",
+        "question": "Who is the main antagonist in the Portal franchise?",
+        "correct_answer": "GLaDOS",
+        "incorrect_answers": [
+            "Chell",
+            "Wheatley",
+            "Rick"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "medium",
-        "category": "Entertainment: Video Games",
-        "question": "Which of these stages is not playable in &quot;Super Smash Bros. for Wii U&quot;?",
-        "correct_answer": "Fountain of Dreams",
+        "category": "Entertainment: Film",
+        "question": "How much money did the 2019 Marvel movie &quot;Avengers: Endgame&quot; gross for it&#039;s record-breaking worldwide opening weekend?",
+        "correct_answer": "1.2 billion USD",
         "incorrect_answers": [
-            "Bridge of Eldin",
-            "75m",
-            "Miiverse"
+            "640 million USD",
+            "456 million USD",
+            "392 million USD"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "medium",
-        "category": "Entertainment: Video Games",
-        "question": "In the Mario Kart and Smash Bros. Games, Princess Rosalina is considered what weight class?",
-        "correct_answer": "Heavy",
+        "category": "Entertainment: Film",
+        "question": "Which movie sequel had improved box office results compared to its original film?",
+        "correct_answer": "Toy Story 2",
         "incorrect_answers": [
-            "Medium",
-            "Light",
-            "Light-Medium"
+            "Sin City: A Dame to Kill For",
+            "Speed 2: Cruise Control",
+            "Son of the Mask"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "medium",
         "category": "Geography",
-        "question": "Where are the Nazca Lines located?",
-        "correct_answer": "Peru",
+        "question": "What is the capital of British Columbia, Canada?",
+        "correct_answer": "Victoria",
         "incorrect_answers": [
-            "Brazil",
-            "Colombia",
-            "Ecuador"
+            "Vancouver",
+            "Hope",
+            "Kelowna"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "medium",
         "category": "Entertainment: Video Games",
-        "question": "How many Chaos Emeralds can you collect in the first Sonic The Hedgehog?",
-        "correct_answer": "Six",
+        "question": "Which musical artist was NOT featured as playable avatars in the game &quot;DJ Hero&quot;?",
+        "correct_answer": "Dr. Dre",
         "incorrect_answers": [
-            "Seven",
-            "Five",
-            "Eight"
+            "DJ Shadow",
+            "Daft Punk",
+            "Grandmaster Flash"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "medium",
         "category": "Entertainment: Music",
-        "question": "When did The Beatles release the LP &quot;Please Please Me&quot;?",
-        "correct_answer": "1963",
+        "question": "What album did Gorillaz release in 2017?",
+        "correct_answer": "Humanz",
         "incorrect_answers": [
-            "1970",
-            "1960",
-            "1969"
+            "Plastic Beach",
+            "The Fall",
+            "Demon Days"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "hard",
         "category": "Vehicles",
-        "question": "The difference between the lengths of a Boeing 777-300ER and an Airbus A350-1000 is closest to:",
-        "correct_answer": "0.1m",
+        "question": "Which one of the following is NOT a sub-company of the Volkswagen Group?",
+        "correct_answer": "Opel",
         "incorrect_answers": [
-            "1m",
-            "10m ",
-            "100m"
+            "Porsche",
+            "Bugatti",
+            "Bentley"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "hard",
-        "category": "Entertainment: Video Games",
-        "question": "In the Nintendo Game Splatoon 2, what is Marina&#039;s screen name?",
-        "correct_answer": "DJ_Hyperfresh",
+        "category": "Science &amp; Nature",
+        "question": "Which of these is a semiconductor amplifying device?",
+        "correct_answer": "transistor",
         "incorrect_answers": [
-            "MC.princess",
-            "Kidnotsquid123",
-            "I&lt;30ffTh3H00k"
+            "tube",
+            "diode",
+            "P-N junction"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "General Knowledge",
+        "question": "Located in Chile, El Teniente is the world&#039;s largest underground mine for what metal?",
+        "correct_answer": "Copper",
+        "incorrect_answers": [
+            "Iron",
+            "Nickel",
+            "Silver"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Entertainment: Music",
+        "question": "What is the British term for a 64th note?",
+        "correct_answer": "Hemidemisemiquaver",
+        "incorrect_answers": [
+            "Semihemidemisemiquaver",
+            "Semiquaver",
+            "Demisemiquaver"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "hard",
         "category": "History",
-        "question": "How many sonatas did Ludwig van Beethoven write?",
-        "correct_answer": "32",
+        "question": "In the Seven Wonders of the World, which wonder is the only that has survived to this day?",
+        "correct_answer": "Great Pyramid of Giza",
         "incorrect_answers": [
-            "50",
-            "31",
-            "21"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Entertainment: Cartoon &amp; Animations",
-        "question": "In the web-comic Homestuck, what is the name of the game the 4 kids play?",
-        "correct_answer": "Sburb",
-        "incorrect_answers": [
-            "Homesick",
-            "Husslie",
-            "Hiveswap"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Geography",
-        "question": "The prefix Sino- (As in Sino-American) is used to refer to what nationality?",
-        "correct_answer": "Chinese",
-        "incorrect_answers": [
-            "Japanese",
-            "Russian",
-            "Indian"
+            "Colossus of Rhodes",
+            "Lighthouse of Alexandria",
+            "Statue of Zeus at Olympia"
         ]
     }
 ]
