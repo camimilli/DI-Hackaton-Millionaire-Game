@@ -27,7 +27,7 @@ def get_questions_info():
 get_questions_info()
 
 # after each game: 
-#   - drop table if exists 
+#   - drop table if exists
 
 
 
