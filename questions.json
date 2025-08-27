@@ -1,0 +1,123 @@
+{
+    "response_code": 0,
+    "results": [
+        {
+            "category": "Vehicles",
+            "correct_answer": "Porsche 911 Turbo",
+            "difficulty": "hard",
+            "incorrect_answers": [
+                "Audi Quattro A2",
+                "BMW M1",
+                "Lancia Rally 037"
+            ],
+            "question": "Which of the following FIA Rally cars was approved for use in the Group B class first? ",
+            "type": "multiple"
+        },
+        {
+            "category": "History",
+            "correct_answer": "Franklin Roosevelt",
+            "difficulty": "medium",
+            "incorrect_answers": [
+                "Theodore Roosevelt",
+                "George Washington",
+                "Abraham Lincoln"
+            ],
+            "question": "Who was the only US President to be elected four times?",
+            "type": "multiple"
+        },
+        {
+            "category": "Science &amp; Nature",
+            "correct_answer": "Blue",
+            "difficulty": "hard",
+            "incorrect_answers": [
+                "Red",
+                "Green",
+                "Purple"
+            ],
+            "question": "What is considered the rarest form of color blindness?",
+            "type": "multiple"
+        },
+        {
+            "category": "Celebrities",
+            "correct_answer": "False",
+            "difficulty": "easy",
+            "incorrect_answers": [
+                "True"
+            ],
+            "question": "Marilyn Monroe was born on July 1, 1926.",
+            "type": "boolean"
+        },
+        {
+            "category": "Entertainment: Video Games",
+            "correct_answer": "58",
+            "difficulty": "hard",
+            "incorrect_answers": [
+                "48",
+                "51",
+                "55"
+            ],
+            "question": "How many playable characters are there in Super Smash Bros. for Nintendo 3DS and Wii U?",
+            "type": "multiple"
+        },
+        {
+            "category": "Entertainment: Books",
+            "correct_answer": "J.K. Rowling",
+            "difficulty": "easy",
+            "incorrect_answers": [
+                "J.R.R. Tolkien",
+                "Terry Pratchett",
+                "Daniel Radcliffe"
+            ],
+            "question": "Who wrote &quot;Harry Potter&quot;?",
+            "type": "multiple"
+        },
+        {
+            "category": "Entertainment: Music",
+            "correct_answer": "Take off all your clothes",
+            "difficulty": "easy",
+            "incorrect_answers": [
+                "Take a cool shower",
+                "Drink some water",
+                "Go skinny dipping"
+            ],
+            "question": "According to the American rapper Nelly, what should you do when its hot in here?",
+            "type": "multiple"
+        },
+        {
+            "category": "Science: Computers",
+            "correct_answer": "Injection ",
+            "difficulty": "hard",
+            "incorrect_answers": [
+                "Broken Authentication",
+                "Cross-Site Scripting",
+                "Insecure Direct Object References"
+            ],
+            "question": "What vulnerability ranked #1 on the OWASP Top 10 in 2013?",
+            "type": "multiple"
+        },
+        {
+            "category": "Entertainment: Comics",
+            "correct_answer": "Energy",
+            "difficulty": "medium",
+            "incorrect_answers": [
+                "Time",
+                "Power",
+                "Soul"
+            ],
+            "question": "In Marvel comics, which of the following is not one of the infinity stones?",
+            "type": "multiple"
+        },
+        {
+            "category": "General Knowledge",
+            "correct_answer": "Shogun",
+            "difficulty": "medium",
+            "incorrect_answers": [
+                "Ninja",
+                "Samurai",
+                "Shinobi"
+            ],
+            "question": "What was the name given to Japanese military dictators who ruled the country through the 12th and 19th Century?",
+            "type": "multiple"
+        }
+    ]
+}
