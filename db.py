@@ -9,6 +9,7 @@ def get_connection():
     return connection
 
 def init_db():
+    '''Initializes a new progress table for a game of "Who Wants to be a Millionare?!'''
     connection = get_connection()
     cursor = connection.cursor()
 
@@ -17,6 +18,7 @@ def init_db():
     question TEXT NOT NULL,
     user_answer TEXT NOT NULL,
     correct_answer TEXT NOT NULL,
+    money INTEGER NOT NULL,
     answered_at TIMESTAMP DEFAULT NOW()
     )"""
 
@@ -28,4 +30,18 @@ def init_db():
     connection.close()
     print("Table Initialized.")
 
-init_db()
+def log_answer(question, user_answer, correct_answer, money):
+    """Logs the question, answer and user response to the progress table"""
+    connection = get_connection()
+    cursor = connection.cursor()
+
+    query = f"""INSERT INTO game_progress(question, user_answer, correct_answer, money) VALUES
+    ('{question}', '{user_answer}', '{correct_answer}', '{money}')"""
+
+    cursor.execute(query)
+    connection.commit()
+    cursor.close()
+    connection.close()
+
+
+log_answer("What is your name?", "Niv", "Jesus", 100)
