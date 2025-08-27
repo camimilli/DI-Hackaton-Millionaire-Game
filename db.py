@@ -17,8 +17,7 @@ def init_db():
         question TEXT NOT NULL,
         user_answer TEXT NOT NULL,
         correct_answer TEXT NOT NULL,
-        money INTEGER NOT NULL,
-        answered_at TIMESTAMP DEFAULT NOW()
+        money INTEGER NOT NULL
     );
     """)
     connection.commit()
@@ -33,5 +32,15 @@ def log_answer(question, user_answer, correct_answer, money):
     cursor.execute(query, (question, user_answer, correct_answer, money))
     connection.commit()
 
-# def fetch_progress(cursor):
-#     pass
+def fetch_progress():
+    cursor.execute('SELECT * FROM game_progress')
+
+    rows = cursor.fetchall()
+    for row in rows:
+        print(
+            f"| Question Number: {row['question_num']} | "
+            f"Question: {row['question']} | "
+            f"User Answer: {row['user_answer']} | "
+            f"Correct Answer: {row['correct_answer']} | "
+            f"Money: {row['money']} | "
+        )
