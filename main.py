@@ -11,7 +11,6 @@
 # check answer 
 
 
-
 # FOR GAME LOOP
 # Fetch the next question
 # q_text, correct_answer, options, money = self.fetch_question()

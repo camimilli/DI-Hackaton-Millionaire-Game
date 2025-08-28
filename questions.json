@@ -2,181 +2,181 @@
     {
         "type": "multiple",
         "difficulty": "easy",
+        "category": "Sports",
+        "question": "Which team won the 2015-16 English Premier League?",
+        "correct_answer": "Leicester City",
+        "incorrect_answers": [
+            "Liverpool",
+            "Cheslea",
+            "Manchester United"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
         "category": "Science: Computers",
-        "question": "In any programming language, what is the most common way to iterate through an array?",
-        "correct_answer": "&#039;For&#039; loops",
+        "question": "What does CPU stand for?",
+        "correct_answer": "Central Processing Unit",
         "incorrect_answers": [
-            "&#039;If&#039; Statements",
-            "&#039;Do-while&#039; loops",
-            "&#039;While&#039; loops"
+            "Central Process Unit",
+            "Computer Personal Unit",
+            "Central Processor Unit"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "easy",
-        "category": "General Knowledge",
-        "question": "What does the F stand for in the FBI?",
-        "correct_answer": "Federal",
+        "category": "Entertainment: Video Games",
+        "question": "What year was Super Mario Bros. released?",
+        "correct_answer": "1985",
         "incorrect_answers": [
-            "Foreign",
-            "Formal",
-            "First"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Geography",
-        "question": "What is the official language of Costa Rica?",
-        "correct_answer": "Spanish",
-        "incorrect_answers": [
-            "English",
-            "Portuguese",
-            "Creole"
+            "1983",
+            "1987",
+            "1986"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "easy",
         "category": "Entertainment: Japanese Anime &amp; Manga",
-        "question": "What is the name of JoJo&#039;s Bizarre Adventure Part 5?",
-        "correct_answer": "Vento Aureo",
+        "question": "In &quot;The Melancholy of Haruhi Suzumiya&quot; series, the SOS Brigade club leader is unknowingly treated as a(n) __ by her peers.",
+        "correct_answer": "God",
         "incorrect_answers": [
-            "Vento Oreo",
-            "Vanto Aureo",
-            "Vento Eureo"
+            "Alien",
+            "Time Traveler",
+            "Esper"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "easy",
-        "category": "Entertainment: Television",
-        "question": "The &quot;Psycho&quot; series of videos on YouTube was created by which of the following?",
-        "correct_answer": "RiDGiD STUDiOS",
+        "category": "Science &amp; Nature",
+        "question": "Which type of rock is created by intense heat AND pressure?",
+        "correct_answer": "Metamorphic",
         "incorrect_answers": [
-            "Dan Bell",
-            "Billy Familia",
-            "VeganGainz"
+            "Sedimentary",
+            "Igneous",
+            "Diamond"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "medium",
+        "category": "Celebrities",
+        "question": "In which situation was musician John Lennon assassinated?",
+        "correct_answer": "Attempting to enter the Dakota Apartments building",
+        "incorrect_answers": [
+            "During an impromptu walk through Central Park",
+            "Signing an autograph outside the Record Plant studio",
+            "Waiting outside a music venue in Manhattan following a gig"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Entertainment: Music",
+        "question": "Who had hits in the 70s with the songs &quot;Lonely Boy&quot; and &quot;Never Let Her Slip Away&quot;?",
+        "correct_answer": "Andrew Gold",
+        "incorrect_answers": [
+            "Elton John",
+            "Leo Sayer",
+            "Barry White "
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Entertainment: Cartoon &amp; Animations",
+        "question": "Which of these is not a real character in the cartoon series My Little Pony: Friendship is Magic?",
+        "correct_answer": "Rose Marene",
+        "incorrect_answers": [
+            "Pinkie Pie",
+            "Maud Pie",
+            "Rainbow Dash"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Sports",
+        "question": "Hockey player Wayne Gretzky was born in what Canadian province?",
+        "correct_answer": "Ontario",
+        "incorrect_answers": [
+            "British Columbia",
+            "Quebec",
+            "Alberta"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "History",
+        "question": "Which of these facilities was not present on the Titanic?",
+        "correct_answer": "Fainting room",
+        "incorrect_answers": [
+            "Turkish bath",
+            "Kennel",
+            "Squash court"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
         "category": "General Knowledge",
-        "question": "What is real haggis made of?",
-        "correct_answer": "Sheep&#039;s Heart, Liver and Lungs",
+        "question": "What does the Latin phrase &quot;Veni, vidi, vici&quot; translate into English?",
+        "correct_answer": "I came, I saw, I conquered",
         "incorrect_answers": [
-            "Sheep&#039;s Heart, Kidneys and Lungs",
-            "Sheep&#039;s Liver, Kidneys and Eyes",
-            "Whole Sheep"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Entertainment: Video Games",
-        "question": "How many classes are there in Team Fortress 2?",
-        "correct_answer": "9",
-        "incorrect_answers": [
-            "10",
-            "8",
-            "7"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Entertainment: Video Games",
-        "question": "Which of the following is not a real Pok&eacute;mon?",
-        "correct_answer": "Luminid",
-        "incorrect_answers": [
-            "Dragalge",
-            "Mandibuzz",
-            "Araquanid"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Entertainment: Television",
-        "question": "In Breaking Bad, the initials W.W. refer to which of the following?",
-        "correct_answer": "Walter White",
-        "incorrect_answers": [
-            "William Wolf",
-            "Willy Wonka",
-            "Wally Walrus"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Entertainment: Music",
-        "question": "Which genre of Hip Hop does MC Frontalot rap?",
-        "correct_answer": "Nerdcore",
-        "incorrect_answers": [
-            "Horrorcore",
-            "Christian",
-            "Crunk"
+            "See no evil, hear no evil, speak no evil",
+            "Life, liberty, and happiness",
+            "Past, present, and future"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "hard",
-        "category": "Vehicles",
-        "question": "What year did the Chevrolet LUV mini truck make its debut?",
-        "correct_answer": "1972",
+        "category": "Entertainment: Cartoon &amp; Animations",
+        "question": "In the 1968 Cartoon Show &quot;Wacky Races&quot; what was the name of cavemen duo who rode in The Boulder Mobile?",
+        "correct_answer": "The Slag Brothers",
         "incorrect_answers": [
-            "1982",
-            "1975",
-            "1973"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Entertainment: Books",
-        "question": "In the Magic: The Gathering universe, which plane does the Homelands expansion take place in?",
-        "correct_answer": "Ulgrotha",
-        "incorrect_answers": [
-            "Bant",
-            "Llanowar",
-            "Tazeem"
+            "The Slate Brothers",
+            "The Rock Brothers",
+            "The Stone Brothers"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "hard",
         "category": "Entertainment: Video Games",
-        "question": "In the game &quot;Overwatch,&quot; which quote does the hero &quot;McCree&quot; NOT say upon using his flashbang ability?",
-        "correct_answer": "&quot;You done?&quot;",
+        "question": "How many voice channels does the Nintendo Entertainment System support natively?",
+        "correct_answer": "5",
         "incorrect_answers": [
-            "&quot;Whoa there.&quot;",
-            "&quot;Hold up now.&quot;",
-            "&quot;Don&#039;t move.&quot;"
+            "4",
+            "6",
+            "3"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "hard",
-        "category": "Entertainment: Books",
-        "question": "Which fictional English county was the setting for Thomas Hardy&#039;s novels?",
-        "correct_answer": "Wessex",
+        "category": "History",
+        "question": "Toussaint Louverture led a successful slave revolt in which country?",
+        "correct_answer": "Haiti",
         "incorrect_answers": [
-            "Barsetshire",
-            "Fulchester",
-            "Ambridge"
+            "France",
+            "Cuba",
+            "United States"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "hard",
-        "category": "Entertainment: Music",
-        "question": "Pamina and Papageno are characters in what Mozart opera?",
-        "correct_answer": "The Magic Flute",
+        "category": "History",
+        "question": "Bohdan Khmelnytsky was which of the following?",
+        "correct_answer": "Leader of the Ukrainian Cossacks",
         "incorrect_answers": [
-            "The Marriage of Figaro",
-            "The Impresario",
-            "The Goose of Cairo"
+            "General Secretary of the Communist Party of the USSR",
+            "Prince of Wallachia",
+            "Grand Prince of Novgorod"
         ]
     }
 ]

@@ -1,4 +1,5 @@
 import config, json, requests, os, random, time, html
+import google.generativeai as genai 
 
 class Game:
     """This class simulates a game of Who Wants to be a Millionaire!?"""
@@ -12,6 +13,13 @@ class Game:
             50000, 100000, 250000, 500000, 1000000
         ]
 
+        # Authenticate API call to Gemini
+        genai.configure(api_key=config.gemini_api_key)
+
+        # Configure Gemini AI model 
+        self.ai_model = genai.GenerativeModel('models/gemini-1.5-flash')
+
+        # Variable used to check if questions.json was initialized or not 
         questions_file = f"{config.dir_path}/questions.json"
 
         # Only fetch from API if JSON file does not exist, otherwise initialize questions AS get_questions_info method
@@ -37,7 +45,7 @@ class Game:
                 # Will move to next difficulty once length of list is 5 or more 5 attempts are made
                 while len(all_questions[diff]) < desired_count and attempts < 5:
                     response = requests.get(
-                        config.api,
+                        config.api_db,
                         params={"amount": 15, "type": "multiple", "difficulty": diff}  # Parameters are added to the base
                     )                                                                  # API using the defined variables
                     
@@ -76,11 +84,14 @@ class Game:
             with open(f"{config.dir_path}/questions.json", "w", encoding="utf-8") as f:
                 json.dump(ordered_questions, f, indent=4, ensure_ascii=False)
 
-    def fetch_question(self):
-        """Takes the dictionary of the question 
+
+    def fetch_question(self)->tuple:
+        """
+        Takes the dictionary of the question 
         at the current index and returns 4 variables
         the question text, the money value, the correct answer
-        and the 4 anser options"""
+        and the 4 answer options
+        """
 
         # money value is assigned to each question depending on the current round
         money = self.money_ladder[self.current_round]
@@ -101,8 +112,11 @@ class Game:
         return question, correct_answer, options, money
     
 
-    def display_question(self, question, options, money):
-        '''Prints the current question and answer options (in A,B,C,D format)'''
+    def display_question(self, question, options, money)->str:
+        '''
+        Prints the current question and answer options (in A,B,C,D format)
+        '''
+
         print(f"\nYour ${money} Question is:\n")
         print(question)
         letters = ['A', 'B', 'C', 'D']
@@ -110,14 +124,19 @@ class Game:
             print(f"({letter}) {option}")
     
 
-    def display_lifelines(self):
-        '''Prints the current lifelines available to the user'''
+    def display_lifelines(self)->str:
+        '''
+        Prints the current lifelines available to the user
+        '''
         for i, lifeline in enumerate(self.lifelines):
             print(f'({i}) {lifeline}')
 
 
-    def get_user_input(self):
-        '''Asks the user whether they want to answer the question or use a lifeline'''
+    def get_user_input(self)->tuple:
+        '''
+        Asks the user whether they want to answer the question or use a lifeline
+        '''
+
         while True:
             try:
                 user_input = int(input("Would you like to:\n(1) Answer\n(2) Use a Lifeline\n"))
@@ -135,7 +154,7 @@ class Game:
                 return ('LIFELINE', lifeline_idx)
             
     
-    def get_user_answer(self):
+    def get_user_answer(self)->:
         '''Prompts the user to enter an answer(A-D) or to go back (X)'''
         while True:
             answer = input("Enter your answer or press (X) to go back: ").upper().strip()
@@ -172,10 +191,94 @@ class Game:
         else:
             return False
     
+    def use_lifeline(self, question, correct_answer, options, lifeline):
+        if lifeline == '50/50':
+             help = self.lifeline_50_50(options, correct_answer) 
+        elif lifeline == 'Ask The Audience':
+            help = self.lifeline_ask_the_audience(self, question, options)
+        else:
+            help = self.lifeline_call_a_friend(question, options)        
+        return help 
+
+
+    def lifeline_50_50(self, options, correct_answer)->list:
+        '''
+        Removes two incorrect answers from the given options and returns a list 
+        containing one incorrect answer and the correct answer
+        '''
+        index_correct_answer = options.index(correct_answer)
+        correct_answer = options.pop(index_correct_answer)
+        print(options)
+        for opt in range(2):
+            del options[opt]
+        options.append(correct_answer)
+        return options 
+        
+
+    def lifeline_call_a_friend(self, question, options):
+        '''
+        Simulates a phone call to a friend using Gemini API
+        so the user can get help 
+        '''
+
+        # Phone call simulation
+        print("📞 Dialing your friend...", end='', flush=True)
+        for _ in range(3):
+            time.sleep(1)
+            print(" .", end='', flush=True)
+        time.sleep(1)
+        print("\nYour friend is on the line 🙋")
+
+        # API call - prompt and response 
+        prompt = f"I'm on the 'Who Wants To Be a Millionaire Gameshow' and I've called you as I need your help.\
+            the questions is: '{question}'. The options are: {options}. Please give me your best guess and a short explanation,\
+            but don't just say 'the answer is X'. Say something like, 'I'm pretty sure it's...' or 'I think I remember hearing that...'.\
+            Give a hint or reason behind your choice and say something funny at the end to end the call like 'If you win, take me on that vacation you promised' \
+            or ask how's the weather or something similar."
+        response = self.ai_model.generate_content(prompt)
+        return f"\nYour friend says:\n{response.text}"
+
+
+    def lifeline_ask_the_audience(self, question, options):
+
+        # Simulate audience voting
+        print("Let's ask the audience what they think 🤔")
+        print("\nAudience voting now...", flush=True)
+
+        # Dramatic wait 
+        for _ in range(3):
+            time.sleep(1)
+            print(".", flush=True)
+        time.sleep(1)
+
+        # API call - prompt and response
+        prompt = f"You are simulating a 'Who Wants To Be a Millionaire' show audience. The player has asked for a vote.\
+                   The question is: '{question}'\
+                   The four options are: {options}\
+                   Please respond with a list of vote percentages for each option. Make it look like real audience votes, where the correct answer has a higher percentage,\
+                   but not always a 100% majority. Present the percentages as a simple list.\
+                   Example response: Make sure you substitute Option 1, 2, 3... with the options I gave you for the question on the same order\
+                   and you remove the Option 1, Option 2...\
+                   Option 1: 75%\
+                   Option 2: 10%\
+                   Option 3: 5%\
+                   Option 4: 10%"
+        
+        print("\nAudience Results: 🗳️")
+        time.sleep(1)
+
+        response = self.ai_model.generate_content(prompt)
+        audience_votes = response.text 
+        return audience_votes
 
 
 g = Game()
-print(g.fetch_question())
+# print(g.fetch_question())
+question, correct_answer, options, money = g.fetch_question()
+# print(options)
+# print(correct_answer)
+ask_the_audience = g.lifeline_ask_the_audience(question, options)
+print(ask_the_audience)
 # g.display_question(g.fetch_question()[0], g.fetch_question()[2], g.fetch_question()[3])
 # g.display_lifelines()
 # print(g.get_user_answer())
