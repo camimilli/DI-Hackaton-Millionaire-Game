@@ -2,7 +2,6 @@ import config, json, requests, os, random, time, html
 
 class Game:
     """This class simulates a game of Who Wants to be a Millionaire!?"""
-    LETTERS = ['A', 'B', 'C', 'D']
 
     def __init__(self):
         self.current_round = 2
@@ -83,7 +82,7 @@ class Game:
         the question text, the money value, the correct answer
         and the 4 anser options"""
 
-        # money value is assigned to each questions depending on the current round
+        # money value is assigned to each question depending on the current round
         money = self.money_ladder[self.current_round]
 
         # retrieves the dictionary of the current question
@@ -96,7 +95,7 @@ class Game:
         # incorrect answers + correct answers need to be combined into a single list
         options = [html.unescape(opt) for opt in question_dict['incorrect_answers']] + [correct_answer]
 
-        # Shuffle so that correct_answer always is in a random place
+        # Shuffle so that correct answer always is in a random place
         random.shuffle(options)
 
         return question, correct_answer, options, money
@@ -165,7 +164,7 @@ class Game:
                 return lifeline_index
 
     def check_answer(self, player_choice, options, correct_answer):
-        '''Checks if the user's choice is the correct answer. Returns True if so.'''
+        '''Checks if the user's choice is the correct answer. Returns True or False'''
         letters = ['A','B','C','D']
         letters_to_options = dict(zip(letters,options))
 
@@ -175,11 +174,3 @@ class Game:
             return True
         else:
             return False
-    
-
-
-g = Game()
-print(g.fetch_question())
-# g.display_question(g.fetch_question()[0], g.fetch_question()[2], g.fetch_question()[3])
-# g.display_lifelines()
-# print(g.get_user_answer())
