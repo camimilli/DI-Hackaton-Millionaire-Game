@@ -1,30 +1,40 @@
+from game import Game 
+import db 
 
-# List of questions and money ladder 
+def main():
 
+    # Initialize DB and game 
+    db.init_db()
+    game = Game()
 
-# welcome message 
-# ask for input - enter (in main loop)
-# check input (in main loop)
-# fetch question 
-# user response 
-# log to database using variables from fetch_question 
-# check answer 
+    print("Welcome to Who Wants to be a Millionaire!?")
+    print("Answer 15 questions correctly to win $1,000,000!")
+    print("You have three lifelines: 50/50, Ask the Audience, and Call a Friend.")
+    print("-" * 50)
 
+    for i in range(15):
 
-# FOR GAME LOOP
-# Fetch the next question
-# q_text, correct_answer, options, money = self.fetch_question()
-# self.display_question(q_text, options, money)
+        round_result = game.play_round()
 
-# # Ask user what they want to do
-# action, value = self.get_user_input()
+        if round_result:
+            print("-" * 50)
+            print("Moving on to the next question.")
+        else:
+            print("\nGame Over.")
+            final_winnings = 0 
+            if i > 0:
+                final_winnings = game.money_ladder[i-1]
+            print(f"You leave with ${final_winnings}!!!")
 
-# if action == 'ANSWER':
-#     if self.check_answer(value, options, correct_answer):
-#         print(f"Correct! You won ${money}")
-#         self.current_question += 1  # move to next question
-#     else:
-#         print(f"Wrong! The correct answer was {correct_answer}")
-#         self.end_game()  # or handle losing logic
-# elif action == 'LIFELINE':
-#     self.use_lifeline(value)  # handle lifeline usage
+            print("\nGame Summary:")
+            db.fetch_progress()
+            break
+
+    if game.current_round == 15:
+        final_winnings = game.money_ladder[-1]
+        print(f"\nCongratulations! You answered all 15 questions correctly and won ${final_winnings}!")
+        print("You are a Millionaire!")
+        print("\nGame Summary:")
+        db.fetch_progress()
+
+main()

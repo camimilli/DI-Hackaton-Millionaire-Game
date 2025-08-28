@@ -1,11 +1,11 @@
-import config, json, requests, os, random, time, html
+import config, json, requests, os, random, time, html, db
 import google.generativeai as genai 
 
 class Game:
     """This class simulates a game of Who Wants to be a Millionaire!?"""
 
     def __init__(self):
-        self.current_round = 2
+        self.current_round = 0
         self.lifelines = ['50/50', 'Ask The Audience', 'Call A Friend']
         self.money_ladder = [
             500, 1000, 2000, 3000, 5000,
@@ -24,7 +24,7 @@ class Game:
 
         # Only fetch from API if JSON file does not exist, otherwise initialize questions AS get_questions_info method
         if not os.path.exists(questions_file):
-            self.questions = self.get_questions_info() 
+            self.get_questions_info() 
 
         # If API exists, initialize questions as an attribute type dict
         with open(questions_file, 'r', encoding='utf-8') as f:
@@ -39,6 +39,8 @@ class Game:
             desired_count = 5
             all_questions = {"easy": [], "medium": [], "hard": []}
 
+            print("Loading game...")
+
             for diff in difficulties:
                 attempts = 0
                 
@@ -52,7 +54,7 @@ class Game:
                     # Ensures that the method will continue working until 5 unique questions are extracted from API
                     # 429 Response Code = Too Many Requests
                     if response.status_code == 429:
-                        print(f"Rate limit hit for {diff}. Waiting 2 seconds before retry...") 
+                        print('Initializing questions...')
                         time.sleep(2)
                         attempts += 1
                         continue
@@ -77,7 +79,7 @@ class Game:
 
                 if len(all_questions[diff]) < desired_count:
                     print(f"Warning: Only fetched {len(all_questions[diff])} {diff} questions from API.")
-
+            
             # Flatten questions in order: easy → medium → hard
             ordered_questions = all_questions["easy"] + all_questions["medium"] + all_questions["hard"]
 
@@ -139,45 +141,50 @@ class Game:
 
         while True:
             try:
-                user_input = int(input("Would you like to:\n(1) Answer\n(2) Use a Lifeline\n"))
+                user_input = int(input("\nWould you like to:\n(1) Answer\n(2) Use a Lifeline\n"))
             except ValueError:
                 print('Invalid Input. Enter 1 or 2')
                 continue
 
             if user_input == 1:
                 answer = self.get_user_answer()
-                if answer is not None:
-                    return ('ANSWER', answer)
+                return ('ANSWER', answer)
             
             elif user_input == 2:
                 lifeline_idx = self.choose_lifeline()
                 return ('LIFELINE', lifeline_idx)
             
     
-    def get_user_answer(self)->:
+    def get_user_answer(self)->str:
         '''Prompts the user to enter an answer(A-D) or to go back (X)'''
         while True:
-            answer = input("Enter your answer or press (X) to go back: ").upper().strip()
-            if answer not in ['A','B','C','D','X']:
+            answer = input("Enter your answer or press (9) to go back: ").upper().strip()
+            if answer not in ['A','B','C','D','9']:
                 print("Invalid Input.")
+                continue 
             return answer
 
 
     def choose_lifeline(self):
         """Display lifelines and prompt the player to choose one."""
         while True:
-            print("\nChoose a Lifeline:")
+            print("\nYour Lifelines:")
             self.display_lifelines()
             try:
-                lifeline_index = int(input("Enter the number of your chosen lifeline: "))
+                lifeline_index = int(input("Pick a lifeline or (9) to go back: "))
             except ValueError:
-                print("Invalid input. Please enter a number.")
+                print("Invalid input. Choose one of the above numbers.")
                 continue
 
-            if lifeline_index not in range(len(self.lifelines)):
+            if lifeline_index == 9:
+                return 9
+            elif lifeline_index not in range(len(self.lifelines)):
                 print("Invalid input. Choose one of the above numbers.")
+                continue
             else:
-                return lifeline_index
+                # remove the chosen lifeline from self and return it
+                chosen_lifeline = self.lifelines.pop(lifeline_index)
+                return chosen_lifeline
 
     def check_answer(self, player_choice, options, correct_answer):
         '''Checks if the user's choice is the correct answer. Returns True or False'''
@@ -195,7 +202,7 @@ class Game:
         if lifeline == '50/50':
              help = self.lifeline_50_50(options, correct_answer) 
         elif lifeline == 'Ask The Audience':
-            help = self.lifeline_ask_the_audience(self, question, options)
+            help = self.lifeline_ask_the_audience(question, options)
         else:
             help = self.lifeline_call_a_friend(question, options)        
         return help 
@@ -206,13 +213,11 @@ class Game:
         Removes two incorrect answers from the given options and returns a list 
         containing one incorrect answer and the correct answer
         '''
-        index_correct_answer = options.index(correct_answer)
-        correct_answer = options.pop(index_correct_answer)
-        print(options)
-        for opt in range(2):
-            del options[opt]
-        options.append(correct_answer)
-        return options 
+        incorrect_answers = [opt for opt in options if opt != correct_answer]
+        random.shuffle(incorrect_answers)
+        new_options = [correct_answer, incorrect_answers[0]]
+        random.shuffle(new_options)
+        return f"\nYour new options are: {new_options[0]} or {new_options[1]}"
         
 
     def lifeline_call_a_friend(self, question, options):
@@ -272,13 +277,47 @@ class Game:
         return audience_votes
 
 
-g = Game()
-# print(g.fetch_question())
-question, correct_answer, options, money = g.fetch_question()
-# print(options)
-# print(correct_answer)
-ask_the_audience = g.lifeline_ask_the_audience(question, options)
-print(ask_the_audience)
-# g.display_question(g.fetch_question()[0], g.fetch_question()[2], g.fetch_question()[3])
-# g.display_lifelines()
-# print(g.get_user_answer())
+    def play_round(self):
+
+        # Initiate values for round 
+        question, correct_answer, options, money = self.fetch_question()
+
+        # Display question to user 
+        self.display_question(question, options, money)
+
+        while True:
+            action, value = self.get_user_input()
+
+            if action == 'ANSWER':
+                if value == '9':
+                    self.display_question(question, options, money)
+                    # Go back to choose ANSWER or LIFELINE
+                    continue
+                
+                else: 
+                    is_correct = self.check_answer(value, options, correct_answer)
+
+                    # log answer to db 
+                    db.log_answer(question, value, correct_answer, money)
+
+                    if is_correct:
+                        print(f'You guessed correctly and won ${money}!')
+                        self.current_round += 1 
+                        return True
+                    else:
+                        print('Wrong answer!')
+                        return False 
+                    
+            elif action == 'LIFELINE':
+                lifeline_chosen = value 
+
+                if lifeline_chosen == 9:
+                    self.display_question(question, options, money)
+                    # Go back to choose ANSWER or LIFELINE
+                    continue
+                else:
+                    help_message = self.use_lifeline(question, correct_answer, options, lifeline_chosen)
+                    if help_message:
+                        print(help_message)
+                    self.display_question(question, options, money)
+                    continue 

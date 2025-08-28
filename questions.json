@@ -2,181 +2,181 @@
     {
         "type": "multiple",
         "difficulty": "easy",
-        "category": "Sports",
-        "question": "Which team won the 2015-16 English Premier League?",
-        "correct_answer": "Leicester City",
+        "category": "Animals",
+        "question": "How many teeth does an adult rabbit have?",
+        "correct_answer": "28",
         "incorrect_answers": [
-            "Liverpool",
-            "Cheslea",
-            "Manchester United"
+            "30",
+            "26",
+            "24"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "easy",
-        "category": "Science: Computers",
-        "question": "What does CPU stand for?",
-        "correct_answer": "Central Processing Unit",
+        "category": "General Knowledge",
+        "question": "Who is the youngest person to receive a Nobel Prize?",
+        "correct_answer": "Malala Yousafzai",
         "incorrect_answers": [
-            "Central Process Unit",
-            "Computer Personal Unit",
-            "Central Processor Unit"
+            "Lawrence Bragg",
+            "Werner Heisenberg",
+            "Yasser Arafat"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "easy",
-        "category": "Entertainment: Video Games",
-        "question": "What year was Super Mario Bros. released?",
-        "correct_answer": "1985",
+        "category": "Geography",
+        "question": "In which country is the city of Rio de Janeiro?",
+        "correct_answer": "Brazil",
         "incorrect_answers": [
-            "1983",
-            "1987",
-            "1986"
+            "Peru",
+            "Chile",
+            "Venezuela"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "easy",
-        "category": "Entertainment: Japanese Anime &amp; Manga",
-        "question": "In &quot;The Melancholy of Haruhi Suzumiya&quot; series, the SOS Brigade club leader is unknowingly treated as a(n) __ by her peers.",
-        "correct_answer": "God",
+        "category": "Art",
+        "question": " What color is produced by mixing black and white?",
+        "correct_answer": "Grey",
         "incorrect_answers": [
-            "Alien",
-            "Time Traveler",
-            "Esper"
+            "Black",
+            "Brown",
+            "White"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "easy",
         "category": "Science &amp; Nature",
-        "question": "Which type of rock is created by intense heat AND pressure?",
-        "correct_answer": "Metamorphic",
+        "question": "Who is the chemical element Curium named after?",
+        "correct_answer": "Marie &amp; Pierre Curie",
         "incorrect_answers": [
-            "Sedimentary",
-            "Igneous",
-            "Diamond"
+            "The Curiosity Rover",
+            "Curious George",
+            "Stephen Curry"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "medium",
-        "category": "Celebrities",
-        "question": "In which situation was musician John Lennon assassinated?",
-        "correct_answer": "Attempting to enter the Dakota Apartments building",
+        "category": "General Knowledge",
+        "question": "The phrase &quot;accident waiting to happen&quot; is an example of what type of figure of speech?",
+        "correct_answer": "Idiom",
         "incorrect_answers": [
-            "During an impromptu walk through Central Park",
-            "Signing an autograph outside the Record Plant studio",
-            "Waiting outside a music venue in Manhattan following a gig"
+            "Simile",
+            "Metaphor",
+            "Analogy"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "medium",
         "category": "Entertainment: Music",
-        "question": "Who had hits in the 70s with the songs &quot;Lonely Boy&quot; and &quot;Never Let Her Slip Away&quot;?",
-        "correct_answer": "Andrew Gold",
+        "question": "What was the title of Sakamoto Kyu&#039;s song &quot;Ue o Muite Arukou&quot; (I Look Up As I Walk) changed to in the United States?",
+        "correct_answer": "Sukiyaki",
         "incorrect_answers": [
-            "Elton John",
-            "Leo Sayer",
-            "Barry White "
+            "Takoyaki",
+            "Sushi",
+            "Oden"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "medium",
-        "category": "Entertainment: Cartoon &amp; Animations",
-        "question": "Which of these is not a real character in the cartoon series My Little Pony: Friendship is Magic?",
-        "correct_answer": "Rose Marene",
+        "category": "Science &amp; Nature",
+        "question": "What term is best associated with Sigmund Freud?",
+        "correct_answer": "Psychoanalysis",
         "incorrect_answers": [
-            "Pinkie Pie",
-            "Maud Pie",
-            "Rainbow Dash"
+            "Cognitive-Behavioral Therapy",
+            "Theory of Gravity",
+            "Dialectical Behavior Therapy"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "medium",
-        "category": "Sports",
-        "question": "Hockey player Wayne Gretzky was born in what Canadian province?",
-        "correct_answer": "Ontario",
+        "category": "Entertainment: Film",
+        "question": "Which of the following is NOT a quote from the 1942 film Casablanca? ",
+        "correct_answer": "&quot;Frankly, my dear, I don&#039;t give a damn.&quot;",
         "incorrect_answers": [
-            "British Columbia",
-            "Quebec",
-            "Alberta"
+            "&quot;Here&#039;s lookin&#039; at you, kid.&quot;",
+            "&ldquo;Of all the gin joints, in all the towns, in all the world, she walks into mine&hellip;&rdquo;",
+            "&quot;Round up the usual suspects.&quot;"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "medium",
-        "category": "History",
-        "question": "Which of these facilities was not present on the Titanic?",
-        "correct_answer": "Fainting room",
+        "category": "Entertainment: Video Games",
+        "question": "In what year was Pok&eacute;mon Diamond &amp; Pearl released in Japan?",
+        "correct_answer": "2006",
         "incorrect_answers": [
-            "Turkish bath",
-            "Kennel",
-            "Squash court"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "General Knowledge",
-        "question": "What does the Latin phrase &quot;Veni, vidi, vici&quot; translate into English?",
-        "correct_answer": "I came, I saw, I conquered",
-        "incorrect_answers": [
-            "See no evil, hear no evil, speak no evil",
-            "Life, liberty, and happiness",
-            "Past, present, and future"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Entertainment: Cartoon &amp; Animations",
-        "question": "In the 1968 Cartoon Show &quot;Wacky Races&quot; what was the name of cavemen duo who rode in The Boulder Mobile?",
-        "correct_answer": "The Slag Brothers",
-        "incorrect_answers": [
-            "The Slate Brothers",
-            "The Rock Brothers",
-            "The Stone Brothers"
+            "2009",
+            "2007",
+            "2008"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "hard",
         "category": "Entertainment: Video Games",
-        "question": "How many voice channels does the Nintendo Entertainment System support natively?",
-        "correct_answer": "5",
+        "question": "Which of these weapon classes DO NOT appear in the first Monster Hunter game?",
+        "correct_answer": "Bow ",
         "incorrect_answers": [
-            "4",
-            "6",
-            "3"
+            "Hammer",
+            "Heavy Bowgun",
+            "Light Bowgun"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "hard",
-        "category": "History",
-        "question": "Toussaint Louverture led a successful slave revolt in which country?",
-        "correct_answer": "Haiti",
+        "category": "Entertainment: Music",
+        "question": "In the Panic! At the Disco&#039;s song &quot;Nothern Downpour&quot;, which lyric follows &#039;I know the world&#039;s a broken bone&#039;.",
+        "correct_answer": "&quot;So melt your headaches call it home&quot;",
         "incorrect_answers": [
-            "France",
-            "Cuba",
-            "United States"
+            "&quot;So sing your song until you&#039;re home&quot;",
+            "&quot;So let them know they&#039;re on their own&quot;",
+            "&quot;So start a fire in their cold stone&quot;"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "hard",
-        "category": "History",
-        "question": "Bohdan Khmelnytsky was which of the following?",
-        "correct_answer": "Leader of the Ukrainian Cossacks",
+        "category": "Science: Computers",
+        "question": "Which of these names was an actual codename for a cancelled Microsoft project?",
+        "correct_answer": "Neptune",
         "incorrect_answers": [
-            "General Secretary of the Communist Party of the USSR",
-            "Prince of Wallachia",
-            "Grand Prince of Novgorod"
+            "Enceladus",
+            "Pollux",
+            "Saturn"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Vehicles",
+        "question": "Which one of these chassis codes are used by BMW 3-series?",
+        "correct_answer": "E46",
+        "incorrect_answers": [
+            "E39",
+            "E85",
+            "F10"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Entertainment: Film",
+        "question": "In what Disney movie can you spot the character &quot;Pac-Man&quot; in if you look closely enough in some scenes?",
+        "correct_answer": "Tron",
+        "incorrect_answers": [
+            "Big Hero 6",
+            "Fantasia",
+            "Monsters, Inc."
         ]
     }
 ]
