@@ -19,7 +19,7 @@ class Game:
         # Configure Gemini AI model 
         self.ai_model = genai.GenerativeModel('models/gemini-1.5-flash')
 
-        # Variable used to check if questions.json was initialized or not 
+        # path for questions file 
         questions_file = f"{config.dir_path}/questions.json"
 
         # Only fetch from API if JSON file does not exist, otherwise initialize questions AS get_questions_info method
@@ -47,7 +47,7 @@ class Game:
                 # Will move to next difficulty once length of list is 5 or more 5 attempts are made
                 while len(all_questions[diff]) < desired_count and attempts < 5:
                     response = requests.get(
-                        config.api_db,
+                        config.api_trivia,
                         params={"amount": 15, "type": "multiple", "difficulty": diff}  # Parameters are added to the base
                     )                                                                  # API using the defined variables
                     
@@ -140,11 +140,18 @@ class Game:
         '''
 
         while True:
-            try:
-                user_input = int(input("\nWould you like to:\n(1) Answer\n(2) Use a Lifeline\n"))
-            except ValueError:
-                print('Invalid Input. Enter 1 or 2')
-                continue
+
+            if self.lifelines:
+                try:
+                    user_input = int(input("\nWould you like to:\n(1) Answer\n(2) Use a Lifeline\n"))
+                except ValueError:
+                    print('Invalid Input. Enter 1 or 2')
+                    continue
+
+            else:
+                # If no lifelines are left, force them to answer
+                print("\nYou don't have any lifelines left. You must answer.")
+                user_input = 1
 
             if user_input == 1:
                 answer = self.get_user_answer()

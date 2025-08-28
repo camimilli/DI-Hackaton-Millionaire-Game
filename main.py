@@ -7,6 +7,7 @@ def main():
     db.init_db()
     game = Game()
 
+    print("\n" + "-" * 50)
     print("Welcome to Who Wants to be a Millionaire!?")
     print("Answer 15 questions correctly to win $1,000,000!")
     print("You have three lifelines: 50/50, Ask the Audience, and Call a Friend.")
