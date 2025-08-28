@@ -16,7 +16,7 @@ class Game:
 
         # Only fetch from API if JSON file does not exist, otherwise initialize questions AS get_questions_info method
         if not os.path.exists(questions_file):
-            self.get_questions_info() 
+            self.questions = self.get_questions_info() 
 
         # If API exists, initialize questions as an attribute type dict
         with open(questions_file, 'r', encoding='utf-8') as f:
@@ -139,13 +139,10 @@ class Game:
         '''Prompts the user to enter an answer(A-D) or to go back (X)'''
         while True:
             answer = input("Enter your answer or press (X) to go back: ").upper().strip()
-            if answer.upper() not in ['A','B','C','D','X']:
+            if answer not in ['A','B','C','D','X']:
                 print("Invalid Input.")
-            elif answer == 'X':
-                return None
-            else:
-                return answer
-    
+            return answer
+
 
     def choose_lifeline(self):
         """Display lifelines and prompt the player to choose one."""
@@ -174,3 +171,11 @@ class Game:
             return True
         else:
             return False
+    
+
+
+g = Game()
+print(g.fetch_question())
+# g.display_question(g.fetch_question()[0], g.fetch_question()[2], g.fetch_question()[3])
+# g.display_lifelines()
+# print(g.get_user_answer())

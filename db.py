@@ -24,7 +24,7 @@ def init_db():
     print("Table Initialized.")
 
 def log_answer(question, user_answer, correct_answer, money):
-    """Logs the question, user answer, correct answer, and money value."""
+    """Logs the question, user answer, correct answer, and money value into the database """
     query = """
     INSERT INTO game_progress(question, user_answer, correct_answer, money)
     VALUES (%s, %s, %s, %s)
